@@ -1,0 +1,59 @@
+@layout('layouts/empty')
+
+@section('title')
+Connexion
+@endsection
+
+@section('current-class')
+auth-page
+@endsection
+
+@section('custom-style-app-container')
+@endsection
+
+@section('content')
+<div class="auth-form">
+  <h1>Réseau Social</h1>
+  <form  action="/login" method="post" class="default-form">
+    {{ csrfField()}}
+    <div class="error-box
+    @if(hasErrorFor('email') || hasErrorFor('password'))
+      active
+    @endif
+    ">
+    @if(hasErrorFor('email'))
+      {{ getErrorFor('email')}}
+    @endif
+    @if(hasErrorFor('password'))
+      {{ getErrorFor('password')}}
+    @endif
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" name="email" value="{{ old('email', '')}}" class="text
+      @if(hasErrorFor('email'))
+        error
+      @endif
+      ">
+    </div>
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" name="password" value="" class="text
+      @if(hasErrorFor('password'))
+        error
+      @endif
+      ">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="text-uppercase">Connexion</button>
+    </div>
+    <hr>
+    <a href="/register" class="register-btn">Vous n'avez pas de compte?</a>
+    <a href="/forgot-password" class="mt5">Mot de passe oublié?</a>
+  </form>
+</div>
+<div class="side-image">
+
+</div>
+
+@endsection

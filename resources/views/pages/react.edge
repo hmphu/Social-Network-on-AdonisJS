@@ -1,0 +1,26 @@
+@layout('layouts/app-react')
+
+@section('title')
+Accueil
+@endsection
+
+@section('current-class')
+home-page
+@endsection
+
+@section('notifications')
+  <div class="notifications welcome
+    @if(flashMessage('notification'))
+      active
+    @endif
+  ">
+    @if(flashMessage('notification'))
+      {{flashMessage('notification')}}
+    @endif
+  </div>
+@endsection
+
+@section('content-area')
+
+<div id="app"> </div>
+@endsection

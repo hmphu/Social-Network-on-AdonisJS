@@ -1,20 +1,11 @@
-vendor/
-node_modules/
-npm-debug.log
+# Node modules
+node_modules
 
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
+# Adonis directory for storing tmp files
+tmp
 
-# Laravel 5 & Lumen specific
-public/storage
-public/hot
-storage/*.key
-.env.*.php
-.env.php
+# Environment variables, never commit this file
 .env
-Homestead.yaml
-Homestead.json
 
-# Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
-.rocketeer/
+# The development sqlite file
+database/development.sqlite
